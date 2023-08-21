@@ -1,0 +1,379 @@
+<div class="container mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" id="section1">
+        <div class="card imp-job">
+          <div class="card-body">
+            <h5 class="card-title head-clr">Import Jobs <span style="font-size: small;"> [4]</span></h5>
+            <!-- First Bootstrap Dropdown -->
+
+            <form class="d-flex" role="search">
+              <input [(ngModel)]="JobsearchTerm" [ngModelOptions]="{standalone: true}"
+                (input)="onJobSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                class="form-control me-2">
+            </form>
+            <br>
+            <div class="col-md-12 mx-auto ">
+
+              <div class="scrollable-list-job">
+                <!-- <br> -->
+                <div class="list-group list-btn" *ngFor="let jobs of Filteredjob">
+                  <button type="button" (click)="SelectJob(jobs)"
+                    class="list-group-item list-group-item-action search-btn btn-select">{{ jobs }}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pat mt-2">
+          <div class="card-body">
+            <h5 class="card-title head-clr">Patients <span style="font-size: small;">[14]</span></h5>
+
+
+            <form class="d-flex" role="search">
+              <input [(ngModel)]="PatientsearchTerm" [ngModelOptions]="{standalone: true}"
+                (input)="onPatientSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                class="form-control me-2 ">
+            </form>
+            <br>
+            <div class="col-md-12 mx-auto ">
+
+              <div class="scrollable-list">
+                <div class="list-group list-btn" *ngFor="let patients of FilteredPatient">
+                  <button type="button" (click)="SelectPatient(patients)"
+                    class="list-group-item list-group-item-action search-btn btn-select">{{ patients }}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-9" id="section2">
+        <div class="card">
+          <h5 class="text-center mt-3 head-clr">Dover High School - Owens Valley Unified School District</h5>
+          <div class="card-body">
+
+            <!-- <div class="alert-btn ind-led">
+              <span style="font-weight: bold;">Last Exam Date: {{ ExistingPatients[arrayIndex].LastExamDate }}</span>
+            </div> -->
+          </div>
+          <br>
+
+
+
+          <!-- ------------------------------------------------------------------------------------------------------------- -->
+          <!-- <div class="table-top">
+            <table class="table">
+              <tr>
+                <td style="font-weight: bold;">Fields</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td style="font-weight: bold;">New Patient Record</td>
+                <td style="font-weight: bold;">Existing Patients Record</td>
+              </tr>
+            </table>
+          </div> -->
+          <div class="alert-btn ind-led">
+            <span style="font-weight: bold;">Last Exam Date: {{ ExistingPatients[arrayIndex].LastExamDate }}</span>
+          </div>
+
+
+
+          <div class="scrollable-box">
+            <table class="table table-down">
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Site Name</td>
+                <td style="font-weight: bold;" class="line">Dover High School</td>
+                <td style="font-weight: bold;" class="line1">{{ ExistingPatients[arrayIndex].SiteName}}</td>
+              </tr>
+
+              <tr>
+                <td class="line"></td>
+                <td class="line">
+                  <label>
+                    <input type="checkbox" [(ngModel)]="selectAllA" style="font-weight: bold;"> Select All
+                  </label>
+                </td>
+                <td class="line1">
+                  <label>
+                    <input type="checkbox" [(ngModel)]="selectAllB" style="font-weight: bold;"> Select All
+                  </label>
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">First Name</td>
+
+                <td class="line">
+                  <input type="radio" name="item1" value="item1-a" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].FirstName != NewPatient.FirstName" >               
+                          <span class="txt-clr">{{NewPatient.FirstName}}</span> 
+
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item1" value="item1-a" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].FirstName != NewPatient.FirstName"> {{ ExistingPatients[arrayIndex].FirstName }}
+                  <span style="color:red;font-weight: bolder;"
+                    *ngIf="ExistingPatients[arrayIndex].Status == DeclinedSer">[Declined]</span>
+                  <span style="color:red;font-weight: bolder;"
+                    *ngIf="ExistingPatients[arrayIndex].Status == Inactive">[Inactive]</span>
+                </td>
+              </tr>
+              <!-- <br> -->
+
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Last Name</td>
+                <td class="line">
+                  <input type="radio" name="item2" value="item2-b" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].LastName != NewPatient.LastName" class="line ">
+                    <span class="txt-clr">{{NewPatient.LastName}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item2" value="item2-b" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].LastName != NewPatient.LastName"> {{
+                  ExistingPatients[arrayIndex].LastName }}
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Date Of Birth</td>
+                <td class="line">
+                  <input type="radio" name="item3" value="item3-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].DateOfBirth != NewPatient.DateOfBirth" class="line">  
+                      <span class="txt-clr">{{NewPatient.DateOfBirth}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item3" value="item3-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].DateOfBirth != NewPatient.DateOfBirth"> {{
+                  ExistingPatients[arrayIndex].DateOfBirth }}
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Gender</td>
+                <td class="line">
+                  <input type="radio" name="item4" value="item4-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].Gender != NewPatient.Gender" class="line">
+                     <span class="txt-clr">{{NewPatient.Gender}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item4" value="item4-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].Gender != NewPatient.Gender"> {{
+                  ExistingPatients[arrayIndex].Gender }}
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Student Id</td>
+                <td class="line">
+                  <input type="radio" name="item5" value="item5-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].StudentId != NewPatient.StudentId" class="line">  
+                     <span class="txt-clr">{{NewPatient.StudentId}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item5" value="item5-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].StudentId != NewPatient.StudentId"> {{
+                  ExistingPatients[arrayIndex].StudentId }}
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Phone Number</td>
+                <td class="line">
+                  <input type="radio" name="item6" value="item6-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].PhoneNumber != NewPatient.PhoneNumber" class="line">
+                    <span class="txt-clr">{{NewPatient.PhoneNumber}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item6" value="item6-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].PhoneNumber != NewPatient.PhoneNumber"> {{
+                  ExistingPatients[arrayIndex].PhoneNumber }}
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Street Address</td>
+                <td class="line">
+                  <input type="radio" name="item7" value="item7-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].StreetAddress != NewPatient.StreetAddress" class="line">
+                    <span class="txt-clr">{{NewPatient.StreetAddress}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item7" value="item7-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].StreetAddress != NewPatient.StreetAddress"> {{
+                  ExistingPatients[arrayIndex].StreetAddress }}
+                </td>
+              </tr>
+              <!-- <br> -->
+
+              <tr>
+                <td style="font-weight: bold;" class="line">Email Address</td>
+                <td class="line">
+                  <input type="radio" name="item7" value="item7-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].EmailAddress != NewPatient.EmailAddress" class="line">
+                    <span class="txt-clr">{{NewPatient.EmailAddress}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item7" value="item7-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].EmailAddress != NewPatient.EmailAddress"> {{
+                  ExistingPatients[arrayIndex].EmailAddress }}
+                </td>
+              </tr>
+              <!-- <br> -->
+              <tr>
+                <td style="font-weight: bold;" class="line">Parent Name</td>
+                <td class="line">
+                  <input type="radio" name="item8" value="item8-c" [checked]="selectAllA"
+                    *ngIf="ExistingPatients[arrayIndex].ParentName != NewPatient.ParentName" class="line">
+                    <span class="txt-clr">{{NewPatient.ParentName}}</span> 
+                </td>
+                <td class="line1">
+                  <input type="radio" name="item8" value="item8-c" [checked]="selectAllB"
+                    *ngIf="ExistingPatients[arrayIndex].ParentName != NewPatient.ParentName"> {{
+                  ExistingPatients[arrayIndex].ParentName }}
+                </td>
+              </tr>
+
+
+            </table>
+
+
+            <!-- --------------------------------------------------------------------------------------------------------- -->
+            <br><br>
+
+
+
+          </div>
+
+
+
+
+          <!-- </div> -->
+
+          <div class="button-container">
+            <button class="job-btn job-btns-clr" data-bs-toggle="modal" data-bs-target="#exampleModal">Merge</button>
+            <button class="job-btn  job-btns-clr" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              Insert</button>
+            <button class="job-btn  job-btns-clr" data-bs-toggle="modal" data-bs-target="#exampleModal2">Skip</button>
+            <span class=" align-right">&nbsp;{{arrayIndex+1}} of {{ExistingPatients.length}} Matches</span>
+
+            <button class="job-btn job-btns-clr align-right" (click)="ChangeBackIndex()">Back</button>
+            <button class="job-btn job-btns-clr align-right" (click)="ChangeIndex()">Next</button>
+
+          </div>
+
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header"
+                  *ngIf="ExistingPatients[arrayIndex].Status != DeclinedSer && ExistingPatients[arrayIndex].Status != Inactive">
+                  <h5 class="modal-title">Confirm</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-header" *ngIf="ExistingPatients[arrayIndex].Status == Inactive">
+                  <h5 class="modal-title">Alert</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-header" *ngIf="ExistingPatients[arrayIndex].Status == DeclinedSer">
+                  <h5 class="modal-title">Alert</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" *ngIf="ExistingPatients[arrayIndex].Status == Inactive">
+                  The Patient you are trying to update is currently inactive. Patient was deactivated on [04/06/2022] by [Sam]. Are you sure you want re-activate this Patient?
+                </div>
+                <div class="modal-body" *ngIf="ExistingPatients[arrayIndex].Status == DeclinedSer">
+                  <p>This Patients family has already declined services with Vision To Learn. This Patient cannot be
+                    examined until a new Opt-In consent has been received and saved.
+                  </p>
+                  <p>If you believe you have matched against this Patient in error, you will need to manually add the
+                    record into SPARTA.</p>
+                </div>
+                <div class="modal-body"
+                  *ngIf="ExistingPatients[arrayIndex].Status != DeclinedSer && ExistingPatients[arrayIndex].Status != Inactive">
+                  Are you sure to proceed with the merge ? </div>
+                <div class="modal-footer" *ngIf="ExistingPatients[arrayIndex].Status == DeclinedSer">
+                  <button type="button" class="btn cancel-btn-clr" data-bs-dismiss="modal"
+                    style="width: 20%;">OK</button>
+                </div>
+                <div class="modal-footer" *ngIf="ExistingPatients[arrayIndex].Status == Inactive">
+                  <button type="button" class="btn cancel-btn-clr" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn  job-btns-clr">Merge</button>
+                </div>
+                <div class="modal-footer"
+                  *ngIf="ExistingPatients[arrayIndex].Status != DeclinedSer && ExistingPatients[arrayIndex].Status != Inactive">
+                  <button type="button" class="btn cancel-btn-clr" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn  job-btns-clr">Merge</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Confirm</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure  to insert this record ?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn cancel-btn-clr" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn job-btns-clr">Insert</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Reason for Skip</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <label> Please specify the reason:
+                  </label><br>
+
+
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Skip Comments</label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn cancel-btn-clr" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn job-btns-clr">Skip</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="info-clr" >
+            * New patient record is marked with this color
+            
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,339 @@
+<div class="container mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 " id="section1">
+
+                <div class="card imp-job ">
+                    <div class="card-body">
+                        <h5 class="card-title head-clr">Import Jobs <span style="font-size: small;">[5]</span></h5>
+                        <!-- First Bootstrap Dropdown -->
+
+
+                        <form class="d-flex" role="search">
+                            <input [(ngModel)]="JobsearchTerm" [ngModelOptions]="{standalone: true}"
+                                (input)="onJobSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                                class="form-control me-2">
+                        </form>
+                        <br>
+                        <div class="col-md-12 mx-auto ">
+
+                            <div class="scrollable-list-job">
+                                <!-- <br> -->
+                                <div class="list-group list-btn" *ngFor="let jobs of Filteredjob">
+                                    <button type="button" (click)="SelectJob(jobs)"
+                                        class="list-group-item list-group-item-action search-btn btn-select">{{ jobs
+                                        }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card pat mt-2 ">
+                    <div class="card-body">
+
+                        <h5 class="card-title head-clr">Patients <span style="font-size: small;">[7]</span></h5>
+                        <!-- First Bootstrap Dropdown -->
+
+                        <form class="d-flex" role="search">
+                            <input [(ngModel)]="PatientsearchTerm" [ngModelOptions]="{standalone: true}"
+                                (input)="onPatientSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                                class="form-control me-2 ">
+
+                            <div class="dropdown dropup">
+                                <button style="background-color: #E9ECEF; border-color: rgb(190, 187, 187);"
+                                    class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-filter" style="color: black; "></i> </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <label class="dropdown-item">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck1"> Merged
+                                    </label>
+                                    <label class="dropdown-item">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheck2">Inserted
+                                    </label>
+                                    <label class="dropdown-item">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+                                        Skipped
+                                    </label>
+                                    <label class="dropdown-item">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck4">Errors
+                                    </label>
+                                    <!-- Add more items as needed -->
+                                </div>
+                            </div>
+
+                        </form>
+                        <br>
+                        <div class="col-md-12 mx-auto ">
+
+                            <div class="scrollable-list">
+                                <div class="list-group list-btn" *ngFor="let patients of FilteredPatient">
+                                    <button type="button" (click)="SelectPatient(patients)"
+                                        class="list-group-item list-group-item-action search-btn btn-select">{{ patients
+                                        }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9" id="section2">
+                <div class="card" style="background-color: rgb(255, 255, 255);">
+                    <h5 class="text-center mt-3 head-clr">Ave Elementary - Owens Valley Unified School District</h5>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInputDisabled" value="1500"
+                                         disabled>
+                                    <label for="floatingInputDisabled">Total Received:</label>
+                                </div>
+                            </div>
+                         
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInputDisabled"  value="1350"
+                                         disabled>
+                                    <label for="floatingInputDisabled">Merged:</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInputDisabled" value="40"
+                                         disabled>
+                                    <label for="floatingInputDisabled"> Skipped:</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-2">
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInputDisabled" value="1450"
+                                         disabled>
+                                    <label for="floatingInputDisabled">Total Processed:</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInputDisabled" value="100"
+                                     disabled>
+                                    <label for="floatingInputDisabled">Inserted:</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInputDisabled" value="10"
+                                     disabled>
+                                    <label for="floatingInputDisabled">Errors:</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="row my-5">
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+                                    <label class="form-check-label ml-2" for="flexCheck1">
+                                        Merged
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
+                                    <label class="form-check-label ml-2" for="flexCheck2">
+                                        Inserted
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+                                    <label class="form-check-label ml-2" for="flexCheck3">
+                                        Skipped
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
+                                    <label class="form-check-label ml-2" for="flexCheck4">
+                                        Errors
+                                    </label>
+                                </div>
+                            </div>
+                        </div> -->
+<h5 class="head-clr">Patient Information</h5>
+
+                        <div class="row my-5">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue"
+                                            placeholder="name@example.com" value="Austin" id="floatingInputDisabled"
+                                            disabled readonly>
+                                        <label for="floatingInputValue">First Name: </label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue"
+                                            placeholder="name@example.com"  id="floatingInputDisabled"
+                                            disabled value="Thomas" readonly>
+                                        <label for="floatingInputValue">Last Name:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue"
+                                            placeholder="name@example.com" id="floatingInputDisabled"
+                                            disabled value="05/11/2012" readonly>
+                                        <label for="floatingInputValue">Date of Birth:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                          
+                        </div>
+
+
+                        <div class="row my-5">
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="Merged" readonly>
+                                        <label for="floatingInputValue">Method:</label>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputDisabled"
+                                        disabled id="floatingInputValue"
+                                            placeholder="name@example.com" value="" readonly>
+                                        <label for="floatingInputValue">Middle Name:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputDisabled"
+                                        disabled  id="floatingInputValue"
+                                            placeholder="name@example.com" value="Austin" readonly>
+                                        <label for="floatingInputValue">Preferred Name:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                          
+                        </div>
+
+                        <div class="row my-5">
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="Male"readonly>
+                                        <label for="floatingInputValue">Gender:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="" readonly>
+                                        <label for="floatingInputValue">Skipped Comments:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="Chris" readonly>
+                                        <label for="floatingInputValue">Parent First Name:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                          
+                        </div>
+
+                        <div class="row my-6">
+
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="Evans" readonly>
+                                        <label for="floatingInputValue">Parent Last Name:</label >
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="Father" readonly>
+                                        <label for="floatingInputValue">Relationship:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <form class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInputValue" id="floatingInputDisabled"
+                                        disabled
+                                            placeholder="name@example.com" value="044-726-3783" readonly>
+                                        <label for="floatingInputValue">Phone:</label>
+                                    </form>
+                                </div>
+                            </div>
+
+                           
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

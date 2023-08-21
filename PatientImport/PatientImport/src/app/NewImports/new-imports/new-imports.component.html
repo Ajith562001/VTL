@@ -1,0 +1,71 @@
+<div class="all-cards">
+    <div class="card" style="width: 18rem; height: 40rem;">
+        <div class="card-body">
+            <h5 class="card-title head-clr">Region<span style="color:red;font-weight: bolder;">*</span></h5>
+            <br>
+
+            <form class="d-flex" role="search">
+                <input [(ngModel)]="RegionsearchTerm" [ngModelOptions]="{standalone: true}" (input)="onRegionSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                    class="form-control me-2" >
+            </form>
+            <br>
+            <div class="col-md-12 mx-auto ">
+
+                <div class="scrollable-list">
+                    <div class="list-group list-btn " *ngFor="let region of Filteredregions">
+
+                        <button type="button" (click)="SelectRegion(region)" 
+                        class="list-group-item list-group-item-action btn-select">{{ region }}</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; height: 40rem;">
+        <div class="card-body">
+            <h5 class="card-title head-clr">Sub Region</h5>
+            <br>
+
+            <form class="d-flex" role="search">
+                <input [(ngModel)]="SubRegionsearchTerm" [ngModelOptions]="{standalone: true}" (input)="onSubRegionSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                    class="form-control me-2">
+            </form>
+            <br>
+            <div class="col-md-12 mx-auto ">
+                <div class="scrollable-list">
+                    <div class="list-group list-btn" *ngFor="let subregion of FilteredSubRegion">
+                        <button type="button" (click)="SelectSubregion(subregion)"class="list-group-item list-group-item-action btn-select">{{ subregion }}</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; height: 40rem;">
+        <div class="card-body">
+            <h5 class="card-title head-clr">Affiliation</h5>
+            <br>
+            <form class="d-flex" role="search">
+                <input  [(ngModel)]="AffiliationsearchTerm" [ngModelOptions]="{standalone: true}" (input)="onAffiliationSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                    class="form-control me-2">
+            </form>
+            <br>
+            <div class="col-md-12 mx-auto ">
+                <div class="scrollable-list">
+                    <div class="list-group list-btn" *ngFor="let affiliation of FilteredAffiliation">
+                        <button type="button" (click)="SelectAffiliation(affiliation)" class="list-group-item list-group-item-action btn-select">{{ affiliation}}</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nxt-btn">
+        <button type="button" class="job-btn "   [ngClass]="{'next-btn-clr': RegionsearchTerm, 'next-btn-disable': !RegionsearchTerm}"[disabled]="!RegionsearchTerm"  style="width: 8rem;" routerLink="/NewImports2"
+            routerLinkActive="active">Next</button>
+    </div>
+   
+</div>

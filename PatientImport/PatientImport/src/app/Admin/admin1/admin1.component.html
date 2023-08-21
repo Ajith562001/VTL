@@ -1,0 +1,249 @@
+
+<div class="add-user">
+  <div class="container mt-5">
+    <button type="button" class="add-custom-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+ Add New User</button>
+  </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add new record</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="email" class="col-form-label">First name<span style="color:red;font-weight: bolder;">*</span></label>
+
+                              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                            </div>
+                            <div class="col">
+                                <label for="email" class="col-form-label">Last name<span style="color:red;font-weight: bolder;">*</span></label>
+                              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+                          </div>
+                          <br>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Email<span style="color:red;font-weight: bolder;">*</span></label>
+                            <input type="text" class="form-control"  placeholder="Email" id="email">
+                        </div>
+                        <div>
+                            <label for="role" class="col-form-label">Role</label>
+                            <form class="d-flex" role="search">
+                                <div class="input-group mb-3">
+                                    <select class="form-select" id="inputGroupSelect01">
+                                        <option selected>Select</option>
+                                        <option value="1">Administrator</option>
+                                        <option value="2">Program Manager </option>
+                                        <option value="3">Importer</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <label for="Authorized-region" class="col-form-label">Authorized Regions</label>
+                            <form class="d-flex" role="search">
+                                <div class="input-group mb-3 reg-drop">
+                                    <select class="form-select" id="inputGroupSelect01">
+                                        <option selected>Select</option>
+                                        <option value="1">IA-Iowa</option>
+                                        <option value="2">CA - Bay Area</option>
+                                        <option value="3">NJ - New Jersey</option>
+                                    </select>
+                                </div>
+                                &nbsp;&nbsp;
+
+                                <div>
+                                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                <label class="form-check-label" for="inlineFormCheck">
+                                    &nbsp;
+                                    All
+                                </label>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Title" class="col-form-label">Title</label>
+                            <input type="text" class="form-control"  placeholder="Title"  id="Title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="zip-code" class="col-form-label">Zip code</label>
+                            <input type="number" class="form-control"   placeholder="Zipcode" id="Zip-code">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button> -->
+                    <button type="button" class="btn  cancel-btn-clr">Cancel</button>
+
+                    <button type="button" class="btn  add-btn-colour">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user-list-box">
+    <div class="container mt-5 pagination-box">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+              <th scope="col">Authorized Regions</th>
+              <th scope="col">Title</th>
+              <th scope="col">Zip Code</th>
+              <th scope="col">Status</th>
+              <th scope="col">    </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dummy data rows -->
+            <tr>
+              <th scope="row">1</th>
+              <td>Shirley</td>
+              <td>Yan </td>
+              <td>shirley.yan@visiontolearn.org</td>
+              <td>Administrator</td>
+              <td>All Regions</td>
+              <td>Admin</td>
+              <td>88788	</td>
+              <td>Active</td>
+
+
+              <td><button type="button" class=" btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@fat">Edit</button>&nbsp;
+
+                <button class="btn btn-outline-secondary"><i class="fas fa-edit"></i>Deactive</button></td> </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Ajith</td>
+              <td>Kumar</td>
+              <td>ajithkumar@visiontolearn.org</td>
+              <td>Program Manger</td>
+              <td>IA - Iowa</td>
+              <td>National Director</td>
+              <td>245357</td>
+              <td>Active</td>
+
+              <td><button type="button" class=" btn btn-outline-secondary " data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@fat">Edit</button>&nbsp;
+
+                <button class="btn btn-outline-secondary"><i class="fas fa-edit"></i>Deactive</button></td> </tr>
+          
+              <tr>
+                <th scope="row">2</th>
+                <td>Abdul</td>
+                <td>aleem</td>
+                <td>abdulaleem@visiontolearn.org</td>
+                <td>Importer</td>
+                <td>IA - Iowa</td>
+                <td>Importer</td>
+                <td>628996</td>
+                <td>Inactive</td>
+                <td>  
+                  <button type="button" class=" btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@fat">Edit</button>&nbsp;
+                <button class="btn btn-outline-secondary" style="width: 55%;"><i class="fas fa-edit"></i>Active</button></td> </tr>
+            </tbody>
+        </table>
+<!-- ====================== -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Record</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <div class="row g-3">
+                              <div class="col">
+                                  <label for="email" class="col-form-label">First name*</label>
+  
+                                <input type="text" class="form-control" placeholder="First name" aria-label="First name" value="Shirley">
+                              </div>
+                              <div class="col">
+                                  <label for="email" class="col-form-label">Last name*</label>
+                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" value="Yan">
+                              </div>
+                            </div>
+                            <br>
+                          <div class="mb-3">
+                              <label for="email" class="col-form-label">Email*</label>
+                              <input type="text" class="form-control" id="email" value="shirley.yan@visiontolearn.org	">
+                          </div>
+                          <div>
+                              <label for="role" class="col-form-label">Role</label>
+                              <form class="d-flex" role="search">
+                                  <div class="input-group mb-3">
+                                      <select class="form-select" id="inputGroupSelect01">
+                                          <!-- <option selected>Select</option> -->
+                                          <option value="1" selected>Administrator</option>
+                                          <option value="2">Program Manager </option>
+                                          <option value="3">Importer</option>
+                                      </select>
+                                  </div>
+                              </form>
+                          </div>
+                          <div>
+                              <label for="Authorized-region" class="col-form-label">Authorized Regions</label>
+                              <form class="d-flex" role="search">
+                                  <div class="input-group mb-3 reg-drop">
+                                      <select class="form-select" id="inputGroupSelect01">
+                                          <option selected>All Region</option>
+                                          <option value="1">IA-Iowa</option>
+                                          <option value="2">CA - Bay Area</option>
+                                          <option value="3">NJ - New Jersey</option>
+                                      </select>
+                                  </div>
+                                  &nbsp;&nbsp;
+  
+                                  <div>
+                                  <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                  <label class="form-check-label" for="inlineFormCheck" >
+                                      &nbsp;
+                                      All
+                                  </label>
+                              </div>
+                              </form>
+                          </div>
+                          <div class="mb-3">
+                              <label for="Title" class="col-form-label">Title</label>
+                              <input type="text" class="form-control" id="Title" value="Admin">
+                          </div>
+                          <div class="mb-3">
+                              <label for="zip-code" class="col-form-label">Zip code</label>
+                              <input type="number" class="form-control" id="Zip-code" value="88788">
+                          </div>
+  
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button> -->
+                      <button type="button" class="btn btn-outline-secondary cancel-btn-clr">Cancel</button>
+  
+                      <button type="button" class="btn btn-primary add-btn-colour">Edit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+<!-- ====================== -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center mt-3 ">
+              <li class="page-item disabled ">
+                <a class="page-link a-txt-color"  tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item active pagination-clr" aria-current="page">
+                <a class="page-link pagination-clr" >1 <span class="sr-only pagination-clr">(current)</span></a>
+              </li>
+              <li class="page-item a-txt-color"><a class="page-link a-txt-color" >2</a></li>
+              <li class="page-item a-txt-color "><a class="page-link a-txt-color">3</a></li>
+              <li class="page-item">
+                <a class="page-link a-txt-color" >Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+</div>

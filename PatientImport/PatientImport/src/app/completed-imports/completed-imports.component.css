@@ -1,0 +1,90 @@
+/* .section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #f8f9fa;
+    border-radius: 2%;
+  } */
+
+  .search-btn{
+    width: 98%;
+  }
+  
+  .imp-job{
+    height: 47%;
+    margin-bottom: 0%;
+  }
+
+  .pat{
+    height: 52%;
+  }
+  
+  #section1{
+    display: flex;
+    flex-direction: column;
+    gap: 0%;
+  }
+
+ /* Media query for phone screens */
+@media (max-width: 767px) {
+    
+    #section2{
+        margin-top: 50px;
+    }
+    #section1{
+        margin-bottom: 50px;
+    }
+    
+    .imp-job{
+        height: 40%;
+      }
+    
+  }
+
+  .dropdown-toggle,
+.dropdown-menu {
+  width: 100%;
+}
+
+.dropdown-item:active{
+    background-color: #eb8934; 
+    color: #ffffff; 
+}
+
+.form-check-input:checked {
+    background-color:#eb8934; 
+    border-color: #eb8934; 
+  } 
+
+.container{
+    margin-top: 5%;
+}
+  
+
+.scrollable-list {
+  max-height : 220px;
+  overflow-y : auto;
+}
+.scrollable-list-job {
+  max-height : 190px;
+  overflow-y : auto;
+}
+
+.list-group-item:hover {
+  background-color: #ffd7a9;
+}
+
+.btn-select:focus{
+  background-color: #f6921f;
+  color: #ffffff; 
+}
+
+/* .card { */
+  /* opacity: 0.7;  */
+  /* pointer-events: none;  */
+/* } */
+
+/* Style for dropdown checkboxes */
+.dropdown.dropup .dropdown-menu {
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.2); /* Add your desired shadow properties here */
+}

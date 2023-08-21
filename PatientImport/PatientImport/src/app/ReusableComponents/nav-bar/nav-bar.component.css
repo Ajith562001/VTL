@@ -1,0 +1,50 @@
+/* .item-gap{
+    display: flex;
+    flex-direction: row;
+    gap: 8%;
+} */
+.navbar-nav {
+  display: flex;
+  font-family: 'Manrope', sans-serif;
+
+  /* align-items: center; */
+}
+
+.navbar-nav .nav-item {
+  font-family: 'Manrope', sans-serif;
+
+  margin-right: 20px; /* Adjust this value for the desired spacing */
+}
+
+/* Optional: Add media query for responsive spacing on smaller screens */
+@media (max-width: 767px) {
+  .navbar-nav .nav-item {
+    margin-right: 10px; /* Adjust this value for responsive spacing */
+    font-family: 'Manrope', sans-serif;
+
+  }
+}
+
+/* .cor-nav{
+  display: flex;
+  padding-left: 60%;
+}  */
+
+
+
+
+/* 
+ .nav-link {
+    text-decoration: none;
+    padding: 10px;
+    color: #333;
+    border-bottom: 2px solid transparent; 
+  }
+  
+  .nav-link.active {
+    border-color: #000000; } */
+  
+    .navbar-nav .nav-link.active {
+      /* Your active state styles here */
+      border-bottom: 2px solid #000000; /* Example: Add a blue underline */
+    }

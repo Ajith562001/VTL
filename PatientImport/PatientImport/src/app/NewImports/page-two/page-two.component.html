@@ -1,0 +1,146 @@
+<a  class="bk-clr"    routerLink="/NewImports">
+    <div class="back-icon">
+    <h1 class="bi bi-arrow-left-circle "></h1>
+</div></a>
+
+
+<div class="main-div">
+
+    <div class="site-div">
+        <div class="card" style="width: 18rem; height: 100%;">
+            <div class="card-body">
+                <h5 class="card-title head-clr">Sites</h5>
+                <br>
+
+
+                <form class="d-flex" role="search">
+                    <input [(ngModel)]="SitesearchTerm" [ngModelOptions]="{standalone: true}"
+                        (input)="onSiteSearchInputChange($event)" placeholder="Search" aria-label="Search"
+                        class="form-control me-2">
+
+                </form>
+                <br>
+                <div class="col-md-12 mx-auto">
+                    <div class="scrollable-list">
+                        <div class="list-group list-btn" *ngFor="let site of FilteredSite">
+
+                            <button type="button" (click)="SelectSite(site)"
+                                class="list-group-item list-group-item-action  btn-select">{{ site }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-main-div">
+
+        <div class="txt">
+            <h5 class="head-clr">Site Information</h5>
+        </div>
+        <br>
+
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputtext" class="form-label">Site Name</label>
+                <input type="text" class="form-control" id="inputtext" value="14th Avenue School" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="inputregion" class="form-label">Region</label>
+                <input type="text" class="form-control" id="inputregion" value="GA - Georgia" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="inputaffiliation" class="form-label">Affiliation</label>
+                <input type="text" class="form-control" id="inputaffiliation" value="Christina School District" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="inputSubregion" class="form-label">Sub Region</label>
+                <input type="text" class="form-control" id="inputsubregion" value="Douglas County" readonly>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                    value="23/G 123 School" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity" value="Batumi City" readonly>
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <input type="text" class="form-control" id="inputstate" value="Georgia State" readonly>
+
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip" value="123456" readonly>
+            </div>
+            <br>
+            <br>
+            <!-- <span style="color: red;" *ngIf="isNotExcel">Error : Excel file only (.xlsx)</span> -->
+            <div class="col-12">
+                <label for="inputZip" class="form-label">Import File</label>
+
+                <input type="file" [(ngModel)]="selectedFile"  id="excelFile" accept=".xlsx, .xls" [ngModelOptions]="{standalone: true}" (change)="onFilleChange($event)" class="form-control" id="inputfile" >
+            </div><br>
+
+            <!-- <div class="container">
+                <h2>Upload Excel File</h2>
+                <form>
+                  <div class="form-group">
+                    <label for="excelFile">Select Excel File</label>
+                    <input type="file" class="form-control-file" id="excelFile" accept=".xlsx, .xls" (change)="onFilleChange($event)">
+                  </div>
+                </form>
+              </div> -->
+              
+            
+            <br>
+            <br>
+            <br>
+            <!-- <div class="import-alert">
+                <h6>Are you sure you want to import these Patients to this Site?</h6>
+            </div> -->
+<br>
+            <div class="button-container btn-con">
+                <!-- <button type="button" class=" ok-btn-clr"
+                    [ngClass]="{'ok-btn-clr': selectedFile, 'ok-btn-disable': !selectedFile}" [disabled]="selectedFile && isNotExcel"
+                    (click)="onOkClick()"  style="width: 11%;" >OK</button> -->
+                    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class=" ok-btn-clr" [ngClass]="{'ok-btn-clr': selectedFile, 'ok-btn-disable': !selectedFile}" [disabled]="selectedFile && isNotExcel"
+                    (click)="onOkClick()"
+                    [disabled]="!isFilleSelected" style="width: 11%;" >OK</button>                     &nbsp;&nbsp;&nbsp; 
+
+                   
+                <button type="button" class=" cancel-btn-clr" (click)="selectedFile = null">Cancel</button>
+            </div>
+
+            <div class="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Import</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to proceed with the File Import ?                   </div>
+                    <div class="modal-footer">
+                      <button type="button" class="cancel-btn-clr" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="ok-btn-clr">Import</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              
+
+<!-- <button class="btn btn-primary" (click)="openPopupMenu()">Import</button>
+<app-popup-menu [disabled]="okButtonDisabled" (formatSelected)="formatSelected($event)"></app-popup-menu> -->
+
+        </form>
+
+     
+
+    </div>
+
+</div>

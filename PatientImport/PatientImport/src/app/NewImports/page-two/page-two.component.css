@@ -1,0 +1,147 @@
+.main-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    /* padding: 2%; */
+    /* top: 1%; */
+    left: 11%;
+    width: 78%;
+    border-radius: 2%;
+
+}
+
+.back-icon {
+    position: relative;
+    margin-top: 1%;
+    width: 100px;
+    left: 2%;
+}
+
+.bk-clr {
+    color: #f6921f;
+}
+
+.scrollable-list {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+
+.site-div {
+    position: relative;
+    display: flex;
+    width: auto;
+
+}
+
+.details-main-div {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 4%;
+    padding-top: 1%;
+    border-radius: 2%;
+
+}
+
+.list-group-item:hover {
+    background-color: #ffd7a9;
+}
+
+.btn-select:focus {
+    background-color: #f6921f;
+    color: #ffffff;
+}
+
+.ok-btn {
+    display: flex;
+    flex-basis: 100px;
+
+    /* flex-basis: 100px; */
+
+}
+
+.ok-btn-disable {
+    background-color: #edebeb;
+    color: #ffffff;
+    border-radius: 10%;
+    opacity: 0.4;
+
+    border-color: #edebeb;
+}
+
+.ok-btn-clr {
+    /* width: 10%; */
+    flex-basis: 100px;
+    background-color: #f6921f;
+    color: #ffffff;
+    border: solid #fcb769;
+    border-radius: 10%;
+
+    cursor: pointer;
+}
+
+
+.ok-btn-clr:hover {
+    background-color: #ffffff;
+    color: #f6921f;
+    border: solid #f2870d;
+    border-radius: 10%;
+
+
+    opacity: 0.5;
+}
+
+.cancel-btn {
+    display: flex;
+    /* flex-basis: 100px; */
+
+
+}
+
+.cancel-btn-clr {
+    flex-basis: 100px;
+    background-color: #ffffff;
+    color: #f6921f;
+    border: solid #f2870d;
+    border-radius: 10%;
+
+    cursor: pointer;
+
+    /* opacity: 0.5; */
+   
+
+
+}
+
+.cancel-btn-clr:hover {
+    border: solid #f2870d;
+    background-color: #f6921f;
+    border-radius: 10%;
+
+    color: #ffffff;
+}
+
+.back-btn {
+    border-radius: 50%;
+}
+
+
+
+
+.txt {
+    position: relative;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.import-alert {
+    position: relative;
+    text-align: center;
+    margin: 3%;
+}
+
+.btn-con{
+    display: flex;
+justify-content: flex-end;}

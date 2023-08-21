@@ -1,0 +1,63 @@
+/* .home-text{
+    position : relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Manrope', sans-serif;
+} */
+.container{
+    position: absolute;
+    top : 30%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 11%;
+}
+
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  } */
+  
+
+.admin-btn-div{
+    position : relative;
+    display: flex;
+    width : 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-btn {
+    padding : 1%;
+    width : 30%;
+    font-size :larger;
+    background-color: #ffffff; /* Your desired background color */
+    color:    #f6921f; /* Text color */
+
+    border: solid #f2870d;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/* .custom-button {
+    background-color: #ffffff; 
+    color:    #f6921f; 
+    border: solid #f2870d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+
+ 
+  .admin-btn:hover {
+    background-color:  #f6921f;  /* Hover background color */
+    color: #ffffff; /* Hover text color */
+    border: solid #f2870d;
+
+    opacity: 0.5;
+  }
+

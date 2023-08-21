@@ -1,0 +1,69 @@
+.all-cards {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 90%;
+    flex-direction: row;
+    gap: 5%;
+    /* margin: 2%; */
+    padding: 4%;
+    padding-left: 10%;
+    left: 1%;
+}
+
+.scrollable-list {
+    max-height : 450px;
+    overflow-y : auto;
+}
+
+.list-group-item:hover {
+    background-color: #ffd7a9;
+}
+
+.btn-select:focus{
+    background-color: #f6921f;
+    color: #ffffff; 
+}
+
+
+
+.nxt-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 12%;
+}
+
+.next-btn-clr {
+    background-color: #f6921f;
+    color: #ffffff;
+    border: solid #ee840a;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.next-btn-clr:hover {
+    background-color: #ffffff;
+    color: #f6921f;
+    border: solid #fcb769;
+    opacity: 0.9;
+}
+
+.next-btn-disable {
+    background-color: #edebeb; /* Change this color to your desired secondary color */
+    color: #ffffff; /* Text color */
+    border-color: #edebeb;
+}
+
+.job-btn {
+    display: flex;
+    flex-basis: 100px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+  }
+  

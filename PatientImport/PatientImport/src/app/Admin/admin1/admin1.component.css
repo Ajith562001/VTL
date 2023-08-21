@@ -1,0 +1,100 @@
+.reg-drop {
+    width: 80%;
+}
+
+.add-user {
+    position: relative;
+    padding-right: 10%;
+    padding-top: 2%;
+}
+
+.user-list-box {
+    padding-left: 5%;
+
+}
+
+.pagination-clr {
+    background-color: #f6921f;
+    border-color: #f6921f;
+
+}
+
+.a-txt-color {
+    color: #f6921f;
+}
+
+
+.cadd-btn-colour:hover {
+    background-color: #f6921f;
+    /* Hover background color */
+    color: #ffffff;
+    /* Hover text color */
+    opacity: 0.5;
+}
+
+.add-btn-colour {
+    width: 15%;
+    background-color: #f6921f;
+    /* Hover background color */
+    color: #ffffff;
+    /* Hover text color */
+   
+    /* padding: 10px 20px; */
+    /* border-radius: 2px; */
+    cursor: pointer;
+}
+
+.add-btn-colour:hover {
+
+    background-color: #ffffff;
+    color: #f6921f;
+    border: solid #f2870d;
+    
+}
+
+.cancel-btn-clr {
+    background-color: #ffffff;
+    color: #f6921f;
+    border: solid #f2870d;
+    /* width: 27%; */
+
+    /* opacity: 0.5; */
+    cursor: pointer;
+}
+
+.cancel-btn-clr:hover {
+    border: solid #f2870d;
+    background-color: #f6921f;
+    color: #ffffff;
+}
+
+.pagination-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #f8f9fa;
+    border-radius: 2%;
+}
+
+.add-custom-button {
+    background-color: #ffffff;
+    /* Your desired background color */
+    color: #f6921f;
+    /* Text color */
+    border: solid #f2870d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.add-custom-button:hover {
+    background-color: #f6921f;
+    /* Hover background color */
+    color: #ffffff;
+    /* Hover text color */
+    opacity: 0.5;
+}
+
+/* #f8a84c
+  #f6921f */
